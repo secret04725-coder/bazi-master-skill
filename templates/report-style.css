@@ -1,0 +1,26 @@
+/* 八字报告 HTML 模板样式参考
+   生成报告时，将此 CSS 内联到 <style> 标签中。
+   根据日主五行调整 --accent 色系：
+   火命: --accent: #c0392b  hero渐变: #1a1a2e→#0f3460
+   水命: --accent: #2980b9  hero渐变: #0a1628→#163d5c
+   木命: --accent: #27ae60  hero渐变: #0a1e0f→#1a4028
+   金命: --accent: #8e8e93  hero渐变: #1a1a1e→#2c2c3e
+   土命: --accent: #d4a017  hero渐变: #1e1a0a→#3e3018
+*/
+
+/* === 核心组件 class 清单 === */
+
+/* .hero          - 顶部展示区，含四柱卡片 */
+/* .pillar-card   - 四柱单卡，.day 为日柱高亮 */
+/* .toc           - 粘性导航栏 */
+/* .chapter       - 章节容器，配合 .chapter-header + .chapter-num + .chapter-title */
+/* .card          - 白底卡片，可叠加 .fire-tint / .water-tint / .wood-tint / .earth-tint / .metal-tint / .highlight / .dark */
+/* .tag           - 行内标签，可叠加 .fire / .water / .wood / .earth / .metal / .good / .bad */
+/* .strength-bar  - 五行力量条，含 .bar-label + .bar-track + .bar-fill.{element} */
+/* .flow-chain    - 流通图，含 .flow-node + .flow-arrow */
+/* .timeline      - 时间线，含 .timeline-item + .tl-label + .tl-desc，.current / .future */
+/* .grid-2        - 两列网格 */
+/* .month-grid    - 月份卡片网格，含 .month-card + .month-title + .month-desc，.danger / .lucky / .key */
+/* .cite          - 经典引用标注 */
+/* .warn          - 警示框 */
+/* blockquote     - 命盘金句 */
