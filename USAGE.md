@@ -188,3 +188,26 @@ bazi-master/
 python3 scripts/paipan.py 2002 8 2 10 f    # 年 月 日 时 性别
 python3 scripts/paipan.py 1999 3 30 - m    # 时辰未知用 - 占位
 ```
+
+---
+
+## 七、用 Codex CLI 代替 Claude Code（可选）
+
+如果你用的是 OpenAI Codex CLI 而不是 Claude Code：
+
+```bash
+# 1. 克隆到任意目录（不需要放 ~/.claude/skills）
+git clone https://github.com/secret04725-coder/bazi-master-skill.git
+cd bazi-master-skill
+
+# 2. 在仓库目录内启动 Codex（会自动读取 AGENTS.md 加载本技能）
+codex
+
+# 3. 正常对话即可
+> 帮我算八字：2002年8月2日上午10点，女
+```
+
+注意事项：
+- **必须在仓库目录内启动**，Codex 靠根目录的 `AGENTS.md` 识别本技能
+- Codex 默认沙箱禁网，遇到这三种情况请批准网络权限：安装 lunardate（农历输入）、查询真实节气时刻（节气边界日）、Cloudflare 隧道分享
+- 排盘结果与 Claude Code 完全一致（同一个 Python 脚本）；报告文案风格可能因模型不同略有差异

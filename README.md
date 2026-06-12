@@ -11,7 +11,8 @@
 | 使用方式 | 支持程度 | 说明 |
 |----------|---------|------|
 | **Claude Code**（推荐） | 原生支持 | 克隆到 `~/.claude/skills/bazi-master`，对话说"算八字"自动触发 |
-| 其他 AI Agent（Cursor / Codex / 自建 Agent） | 可移植 | 把 `SKILL.md` 作为系统提示词喂入，配合本仓库文件即可，工作流完全一致 |
+| **Codex CLI** | 原生支持 | 克隆仓库后**在仓库目录内启动 Codex**，自动读取 `AGENTS.md` 加载本技能；联网步骤（lunardate 安装/节气查询/隧道分享）需批准网络权限 |
+| 其他 AI Agent（Cursor / 自建 Agent） | 可移植 | 支持 AGENTS.md 的工具同上；否则把 `SKILL.md` 作为系统提示词喂入，工作流完全一致 |
 | 不用 AI，纯命令行 | 部分支持 | `scripts/paipan.py` 是独立 Python 脚本，排盘功能可单独使用（无分析报告） |
 
 ```bash
