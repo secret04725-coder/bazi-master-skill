@@ -41,11 +41,36 @@ description: >
 ### 方式B：逐步收集
 按以下步骤逐一收集：
 1. 姓名/称呼
-2. 公历生日（年月日）
+2. 生日（年月日）——**必须确认是公历还是农历**
 3. 出生时间（具体时间或时辰，不知道则标"未知"）
 4. 性别（男/女）
-5. 出生地（省市）
+5. 出生地（省市）——用于真太阳时校正
 6. 确认信息
+
+### ⚠️ 农历转公历（必查）
+用户给的日期如果是农历（说"农历"、"阴历"、"初几"、"十月二十五"这类表述），**必须先转公历再排盘**：
+
+```bash
+pip3 install lunardate -q
+python3 -c "
+from lunardate import LunarDate
+sd = LunarDate(<农历年>, <农历月>, <农历日>).toSolarDate()
+print(f'{sd.year}-{sd.month}-{sd.day}')
+"
+```
+
+闰月用 `LunarDate(年, 月, 日, isLeapMonth=True)`。转换后向用户复述"农历X = 公历Y"确认。
+
+### ⚠️ 真太阳时校正（边界时辰必做）
+时辰按**真太阳时**划分，不是北京时间。校正公式：
+
+```
+真太阳时 ≈ 北京时间 + (出生地经度 - 120) × 4 分钟
+```
+
+例：汕尾(115.4°E) 7:00 → 真太阳时 6:42 → 属卯时而非辰时。
+
+**规则**：校正后如果距离时辰边界（奇数整点）在 ±30 分钟内，必须向用户说明边界情况并确认出生时间精度，必要时出两个版本对照。
 
 ---
 
@@ -54,18 +79,22 @@ description: >
 **必须使用 paipan.py 进行排盘，不要手动推算。**
 
 ```bash
-python3 scripts/paipan.py <年> <月> <日> <时(0-23)> <m/f>
+python3 scripts/paipan.py <公历年> <月> <日> <时(0-23)> <m/f>
 ```
 
 示例：
 ```bash
-python3 scripts/paipan.py 2002 8 2 10 f
+python3 scripts/paipan.py 2002 8 2 10 f      # 完整信息
+python3 scripts/paipan.py 1999 3 30 - m       # 时辰未知用 - 占位
+python3 scripts/paipan.py 2001 12 9 23 m      # 23点后自动按次日日柱（夜子时）
 ```
 
-如果时辰未知，省略时间参数：
-```bash
-python3 scripts/paipan.py 1999 3 30
-```
+注意：脚本路径相对于本 skill 目录。若当前目录不在 skill 内，请使用绝对路径（如 `~/.claude/skills/bazi-master/scripts/paipan.py`）。
+
+### ⚠️ 脚本的两个已知近似，必须人工修正
+
+1. **起运年龄**：脚本默认按 9 岁近似。大运**干支序列是准确的**，但起运年龄必须按 `references/dayun-rules.md` 重算：出生日到上/下一个节的天数 ÷ 3（顺排数到下一节，逆排数到上一节）。修正后整体平移年龄区间。
+2. **节气边界**：脚本用固定近似节气日（如立春=2月4日），实际每年浮动1-2天。**出生日在每月节气日 ±2 天内**时，需查询该年真实节气时刻确认月柱（可 WebSearch "XXXX年立春 准确时间"），年柱同理（立春为界）。
 
 排盘结果确认后进入分析阶段。
 
@@ -146,7 +175,7 @@ python3 scripts/paipan.py 1999 3 30
 - 支持打印（`@media print`）
 
 完整的 CSS 组件清单见 `templates/report-style.css`。
-生成时参考现有报告文件的实际 HTML 结构。
+**生成报告前必须先读 `templates/report-example.html`**（完整的19章样例报告），严格沿用其 CSS 与章节 HTML 结构，只替换内容和主题色。
 
 ---
 
@@ -175,16 +204,22 @@ python3 scripts/paipan.py 1999 3 30
 
 ### 方案1：Cloudflare 隧道（推荐，免登录）
 ```bash
-# 启动本地服务
+# 1. 在报告所在目录启动本地服务
 python3 -m http.server 8234 &
 
-# 创建隧道（如果 cloudflared 未安装先下载）
-curl -sL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-darwin-amd64.tgz -o /tmp/cloudflared.tgz
-cd /tmp && tar xzf cloudflared.tgz
-/tmp/cloudflared tunnel --url http://localhost:8234
+# 2. 安装 cloudflared（按平台选择）
+# macOS（推荐，自动匹配芯片）:
+brew install cloudflared
+# macOS 无 brew / Linux: 从 GitHub releases 下载对应平台二进制
+#   macOS Intel: cloudflared-darwin-amd64.tgz / Apple Silicon: cloudflared-darwin-arm64.tgz
+#   Linux: cloudflared-linux-amd64
+# Windows: winget install Cloudflare.cloudflared
+
+# 3. 创建隧道
+cloudflared tunnel --url http://localhost:8234
 ```
 
-隧道会生成一个 `*.trycloudflare.com` 链接，微信可直接打开。
+隧道会生成一个 `*.trycloudflare.com` 链接，微信可直接打开。注意：隧道是临时的，终端关闭即失效；需要长期分享用方案2。
 
 ### 方案2：GitHub Pages
 推送到 GitHub 仓库，启用 Pages。注意国内可能访问不稳定。

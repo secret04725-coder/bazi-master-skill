@@ -282,8 +282,26 @@ if __name__ == '__main__':
         sys.exit(1)
 
     y, m, d = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
-    h = int(sys.argv[4]) if len(sys.argv) > 4 else None
-    g = sys.argv[5] if len(sys.argv) > 5 else None
+
+    # 第4/5个参数灵活解析：数字=小时，m/f/男/女=性别，'-'=时辰未知占位
+    h, g = None, None
+    for arg in sys.argv[4:6]:
+        if arg == '-':
+            continue
+        if arg.lower() in ('m', 'f', '男', '女'):
+            g = arg
+        else:
+            h = int(arg)
+
+    # 夜子时（23点后）按次日日柱计算
+    if h == 23:
+        from datetime import timedelta
+        nd = date(y, m, d) + timedelta(days=1)
+        y, m, d, h = nd.year, nd.month, nd.day, 0
+        print("【夜子时】23点后出生，已按次日日柱排盘")
 
     result = paipan(y, m, d, h, g)
     print_result(result)
+    if 'dayun' in result:
+        print("\n⚠️ 起运年龄为近似值（默认9岁）。精确起运年龄需按节气天数÷3计算，")
+        print("   干支序列正确，仅年龄区间可能整体偏移，请按 references/dayun-rules.md 修正。")

@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>丙火男命 · 八字深度分析报告（汕尾）</title>
+<style>
+  :root {
+    --fire: #e74c3c;
+    --fire-light: #fff5f5;
+    --fire-glow: #ff6b6b;
+    --wood: #27ae60;
+    --wood-light: #f0faf4;
+    --water: #2980b9;
+    --water-light: #f0f7ff;
+    --earth: #d4a017;
+    --earth-light: #fefcf0;
+    --metal: #8e8e93;
+    --metal-light: #f7f7f8;
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --text: #2c2c2e;
+    --text-secondary: #636366;
+    --border: #e5e5ea;
+    --accent: #c0392b;
+    --accent-light: #fdf2f0;
+    --gold: #b8860b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+    color: #fff;
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 60% 40%, rgba(231,76,60,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(41,128,185,0.15) 0%, transparent 50%);
+    animation: heroGlow 8s ease-in-out infinite alternate;
+  }
+  @keyframes heroGlow { 0% { transform: translate(0,0); } 100% { transform: translate(-5%,3%); } }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .hero h1 { font-size: 2.2em; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 1.1em; opacity: 0.8; margin-bottom: 24px; }
+  .hero .meta { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 0.9em; opacity: 0.7; }
+  .hero .pillars { display: flex; justify-content: center; gap: 16px; margin-top: 32px; }
+  .pillar-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 16px 20px;
+    min-width: 90px;
+    text-align: center;
+  }
+  .pillar-card .label { font-size: 0.75em; opacity: 0.6; margin-bottom: 4px; }
+  .pillar-card .gan { font-size: 1.8em; font-weight: 700; line-height: 1.2; }
+  .pillar-card .zhi { font-size: 1.8em; font-weight: 700; line-height: 1.2; }
+  .pillar-card.day { border-color: var(--fire-glow); box-shadow: 0 0 20px rgba(231,76,60,0.3); }
+  .pillar-card .gan.fire { color: var(--fire-glow); }
+  .pillar-card .gan.metal { color: #c0c0c0; }
+  .pillar-card .gan.water { color: #64b5f6; }
+  .pillar-card .zhi.fire { color: #ff8a65; }
+  .pillar-card .zhi.water { color: #64b5f6; }
+  .pillar-card .zhi.earth { color: var(--earth); }
+  .toc {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .toc-inner { max-width: 900px; margin: 0 auto; display: flex; gap: 8px; justify-content: center; flex-wrap: nowrap; }
+  .toc a {
+    display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 0.82em;
+    color: var(--text-secondary); text-decoration: none; background: var(--bg);
+    border: 1px solid var(--border); transition: all 0.2s; flex-shrink: 0;
+  }
+  .toc a:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+  .chapter { margin-bottom: 48px; scroll-margin-top: 72px; }
+  .chapter-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    padding-bottom: 12px; border-bottom: 2px solid var(--border);
+  }
+  .chapter-num {
+    background: var(--accent); color: #fff; width: 36px; height: 36px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9em; flex-shrink: 0;
+  }
+  .chapter-title { font-size: 1.4em; font-weight: 700; }
+  h3 { font-size: 1.1em; font-weight: 600; margin: 28px 0 12px; padding-left: 12px; border-left: 3px solid var(--accent); color: var(--text); }
+  h4 { font-size: 1em; font-weight: 600; margin: 20px 0 8px; color: var(--text-secondary); }
+  p { margin-bottom: 12px; }
+  .card {
+    background: var(--card); border-radius: 12px; padding: 20px 24px; margin: 16px 0;
+    border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card.fire-tint { background: var(--fire-light); border-color: #f5c6c0; }
+  .card.wood-tint { background: var(--wood-light); border-color: #b7e4c7; }
+  .card.water-tint { background: var(--water-light); border-color: #b3d4f0; }
+  .card.earth-tint { background: var(--earth-light); border-color: #e8d88c; }
+  .card.metal-tint { background: var(--metal-light); border-color: #d1d1d6; }
+  .card.highlight { background: linear-gradient(135deg, #fff5f5 0%, #fff0eb 100%); border-color: var(--fire-glow); border-width: 2px; }
+  .card.dark { background: #1a1a2e; color: #e0e0e0; border-color: #2a2a4e; }
+  .card.dark strong { color: #ff8a65; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.92em; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: #f5f5f7; font-weight: 600; font-size: 0.88em; color: var(--text-secondary); white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.82em; font-weight: 600; margin: 2px; }
+  .tag.fire { background: #fee; color: #c0392b; }
+  .tag.water { background: #eef5ff; color: #2471a3; }
+  .tag.wood { background: #eafaf1; color: #1e8449; }
+  .tag.earth { background: #fef9e7; color: #b7950b; }
+  .tag.metal { background: #f2f3f4; color: #666; }
+  .tag.good { background: #d5f5e3; color: #1e8449; }
+  .tag.bad { background: #fadbd8; color: #c0392b; }
+  blockquote {
+    border-left: 4px solid var(--accent); padding: 12px 20px; margin: 16px 0;
+    background: var(--accent-light); border-radius: 0 8px 8px 0;
+    font-style: italic; color: var(--accent); font-weight: 500;
+  }
+  ul, ol { padding-left: 24px; margin: 8px 0 16px; }
+  li { margin-bottom: 6px; }
+  .strength-bar { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+  .strength-bar .bar-label { width: 36px; font-weight: 600; font-size: 0.9em; flex-shrink: 0; }
+  .strength-bar .bar-track { flex: 1; height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
+  .strength-bar .bar-fill { height: 100%; border-radius: 5px; transition: width 0.8s ease; }
+  .bar-fill.fire { background: linear-gradient(90deg, #ff6b6b, #e74c3c); }
+  .bar-fill.metal { background: linear-gradient(90deg, #bdc3c7, #95a5a6); }
+  .bar-fill.water { background: linear-gradient(90deg, #74b9ff, #2980b9); }
+  .bar-fill.earth { background: linear-gradient(90deg, #f9ca24, #d4a017); }
+  .bar-fill.wood { background: linear-gradient(90deg, #55efc4, #27ae60); }
+  .flow-chain { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 20px 0; flex-wrap: wrap; font-size: 0.95em; }
+  .flow-node { padding: 8px 16px; border-radius: 8px; font-weight: 600; text-align: center; }
+  .flow-arrow { font-size: 1.2em; color: var(--text-secondary); }
+  .timeline { position: relative; padding-left: 28px; margin: 16px 0; }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px;
+    background: linear-gradient(to bottom, var(--fire), var(--wood), var(--water)); border-radius: 1px;
+  }
+  .timeline-item { position: relative; margin-bottom: 20px; padding: 12px 16px; background: var(--card); border-radius: 8px; border: 1px solid var(--border); }
+  .timeline-item::before { content: ''; position: absolute; left: -24px; top: 16px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--card); }
+  .timeline-item.current::before { background: var(--fire-glow); box-shadow: 0 0 8px var(--fire-glow); }
+  .timeline-item.future::before { background: var(--wood); }
+  .timeline-item .tl-label { font-weight: 700; font-size: 0.95em; margin-bottom: 4px; }
+  .timeline-item .tl-desc { font-size: 0.9em; color: var(--text-secondary); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+  .month-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
+  .month-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 0.9em; }
+  .month-card .month-title { font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .month-card .month-desc { color: var(--text-secondary); font-size: 0.92em; }
+  .month-card.danger { border-color: #e74c3c; background: #fff5f5; }
+  .month-card.lucky { border-color: #27ae60; background: #f0faf4; }
+  .month-card.key { border-color: #f39c12; background: #fef9e7; }
+  .warn { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 0.92em; }
+  .cite { font-size: 0.85em; color: var(--text-secondary); margin-top: 8px; font-style: italic; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  .footer { text-align: center; padding: 40px 24px; color: var(--text-secondary); font-size: 0.85em; border-top: 1px solid var(--border); }
+  @media print { .toc { display: none; } .hero { padding: 40px 24px 30px; } .container { padding: 16px; } .chapter { break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>丙火男命 · 深度分析</h1>
+    <div class="subtitle">冬日骄阳 · 七杀藏龙 · 厚积薄发</div>
+    <div class="meta">
+      <span>农历辛巳年十月二十五 辰时</span>
+      <span>公历 2001年12月9日 7:00</span>
+      <span>男命 · 汕尾</span>
+    </div>
+    <div class="pillars">
+      <div class="pillar-card">
+        <div class="label">年柱</div>
+        <div class="gan metal">辛</div>
+        <div class="zhi fire">巳</div>
+      </div>
+      <div class="pillar-card">
+        <div class="label">月柱</div>
+        <div class="gan metal">庚</div>
+        <div class="zhi water">子</div>
+      </div>
+      <div class="pillar-card day">
+        <div class="label">日柱</div>
+        <div class="gan fire">丙</div>
+        <div class="zhi fire">午</div>
+      </div>
+      <div class="pillar-card">
+        <div class="label">时柱</div>
+        <div class="gan water">壬</div>
+        <div class="zhi earth">辰</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#c1">排盘</a>
+    <a href="#c1b">调候</a>
+    <a href="#c2">天干</a>
+    <a href="#c3">地支</a>
+    <a href="#c4">藏干</a>
+    <a href="#c5">长生</a>
+    <a href="#c6">神煞</a>
+    <a href="#c7">五行</a>
+    <a href="#c8">十神</a>
+    <a href="#c9">六亲</a>
+    <a href="#c10">财运</a>
+    <a href="#c11">事业</a>
+    <a href="#c12">感情</a>
+    <a href="#c13">健康</a>
+    <a href="#c14">大运</a>
+    <a href="#c15">流年</a>
+    <a href="#c16">未来</a>
+    <a href="#c17">转运</a>
+    <a href="#c18">叙事</a>
+    <a href="#c19">校准</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- Chapter 1: 排盘总览 -->
+<div class="chapter" id="c1">
+  <div class="chapter-header">
+    <div class="chapter-num">1</div>
+    <div class="chapter-title">排盘总览</div>
+  </div>
+  <table>
+    <tr><th></th><th>年柱</th><th>月柱</th><th>日柱</th><th>时柱</th></tr>
+    <tr><td><strong>天干</strong></td><td><span class="tag metal">辛（正财）</span></td><td><span class="tag metal">庚（偏财）</span></td><td><span class="tag fire">丙（日主）</span></td><td><span class="tag water">壬（七杀）</span></td></tr>
+    <tr><td><strong>地支</strong></td><td><span class="tag fire">巳</span></td><td><span class="tag water">子</span></td><td><span class="tag fire">午</span></td><td><span class="tag earth">辰</span></td></tr>
+    <tr><td><strong>藏干</strong></td><td>丙·庚·戊</td><td>癸</td><td>丁·己</td><td>戊·乙·癸</td></tr>
+    <tr><td><strong>十神</strong></td><td>比肩·偏财·食神</td><td>正官</td><td>劫财·伤官</td><td>食神·正印·正官</td></tr>
+    <tr><td><strong>纳音</strong></td><td>白蜡金</td><td>壁上土</td><td>天河水</td><td>长流水</td></tr>
+    <tr><td><strong>地势</strong></td><td>临官</td><td>胎</td><td>帝旺</td><td>冠带</td></tr>
+  </table>
+
+  <div class="card highlight">
+    <strong>日主丙火 — 太阳之火</strong>
+    <p style="margin-top:8px;">丙火为天上之太阳，光明正大、热情磊落。不同于丁火（烛火）的隐忍内敛，丙火是天地间穿透力最强的火——高悬天际，普照万物。最怕厚云遮蔽（壬癸水重重克火）、无燃料供给（缺木无生）。此命生于子月寒冬，太阳虽弱但坐午帝旺——内核极热。</p>
+    <p class="cite">——《滴天髓》："丙火猛烈，欺霜侮雪。能煅庚金，逢辛反怯。"</p>
+  </div>
+
+  <h3>纳音解读</h3>
+  <div class="grid-2">
+    <div class="card metal-tint">
+      <h4>年柱 · 白蜡金</h4>
+      <p>日光下的金箔，有光泽但薄而不坚。祖上家境有面子但底蕴有限，表面光鲜。</p>
+    </div>
+    <div class="card earth-tint">
+      <h4>月柱 · 壁上土</h4>
+      <p>墙壁涂料，依附于结构之上。父母给的资源是"面子工程"——看得到但抓不住。</p>
+    </div>
+    <div class="card water-tint">
+      <h4>日柱 · 天河水</h4>
+      <p>银河之水，高远不落凡尘。理想主义色彩浓厚，格局大但容易脱离实际。</p>
+    </div>
+    <div class="card water-tint">
+      <h4>时柱 · 长流水</h4>
+      <p>江河之水，绵延不断。晚年有持续不断的收入来源和事业延伸。长流不竭，预示晚年运势绵长。</p>
+    </div>
+  </div>
+  <div class="card dark">
+    <p>纳音整体画像：<strong>外有光泽（白蜡金）、内怀高远之志（天河水）、晚年江河不竭（长流水）</strong>——前半生磨砺成器，后半生源源不断。</p>
+  </div>
+</div>
+
+<!-- Chapter 1b: 调候用神 -->
+<div class="chapter" id="c1b">
+  <div class="chapter-header">
+    <div class="chapter-num" style="background:var(--gold);">调</div>
+    <div class="chapter-title">调候用神（穷通宝典）</div>
+  </div>
+
+  <div class="card highlight">
+    <strong>丙火生于子月（十一月）— 寒冬之阳</strong>
+    <p style="margin-top:8px;">子月为仲冬，水旺火弱，丙火如寒冬太阳，光有热情却暖不到人。此时丙火最需要的是：</p>
+    <ol>
+      <li><strong>甲木</strong>（第一调候）— 木能生火，是丙火的燃料和靠山。甲木如参天大树，能源源不断供给丙火能量</li>
+      <li><strong>戊土</strong>（第二调候）— 戊土能止水（制住过旺的壬癸水），给丙火喘息空间</li>
+      <li><strong>庚金</strong>（辅助调候）— 庚金劈甲引丁，让甲木更好地燃烧生火</li>
+    </ol>
+    <p class="cite">——《穷通宝典》："十一月丙火，冬日之阳，取甲木为尊。甲透戊透，富贵双全。无甲用乙，但力不足。"</p>
+  </div>
+
+  <h3>调候用神在命局中的分布</h3>
+  <table>
+    <tr><th>调候用神</th><th>命局是否有</th><th>位置</th><th>力量</th></tr>
+    <tr><td><span class="tag wood">甲木（第一调候）</span></td><td><span class="tag bad">天干无</span></td><td>辰中藏乙木（正印），非甲木</td><td>极弱——<strong>天干无木是最大短板，辰中乙木仅为微弱补救</strong></td></tr>
+    <tr><td><span class="tag earth">戊土（第二调候）</span></td><td><span class="tag">暗藏</span></td><td>辰中藏戊，天干不透</td><td>偏弱——藏而不透，制水力量有限</td></tr>
+    <tr><td><span class="tag metal">庚金（辅助调候）</span></td><td><span class="tag good">有</span></td><td>月干透出</td><td>有力——但庚金为偏财，无甲可劈则效用受限</td></tr>
+  </table>
+
+  <div class="card dark">
+    <p><strong>调候诊断：第一调候甲木天干缺失，辰中仅藏微弱乙木，是命局最核心的结构性短板。</strong></p>
+    <p>相比天干完全无木的命盘，辰中藏乙木（正印）是一个"暗桩"——说明此人骨子里有学习力和领悟力，但需要大运流年激活才能发挥。戊土（第二调候）也仅藏于辰中，不如透出天干有力。</p>
+    <p><strong>补救关键</strong>：大运流年见甲乙木时，丙火如枯木逢春。此命49岁乙未运、59岁甲午运连续20年印星大运，是真正绽放的时刻。</p>
+    <p class="cite">——《穷通宝典》："无甲用乙，但乙木阴柔，不如甲木之刚。有甲无戊，虽能生火但不能止水，富而不贵。"</p>
+  </div>
+</div>
+
+<!-- Chapter 2: 天干关系 -->
+<div class="chapter" id="c2">
+  <div class="chapter-header">
+    <div class="chapter-num">2</div>
+    <div class="chapter-title">天干关系详解</div>
+  </div>
+
+  <h3>丙辛合水 — 日主合财（核心关系）</h3>
+  <div class="card highlight">
+    <p>丙（日干）与辛（年干）形成<strong>丙辛合化水</strong>。正财合身，天然对钱财、物质、异性有吸引力。</p>
+    <ul>
+      <li>生于子月水旺，理论上有化水条件。但丙坐午火帝旺，火势极强，判断为<strong>合而不化</strong></li>
+      <li>天生对财富敏感，有求财本能和驱动力</li>
+      <li>"合"意味着缠绵——容易被金钱、物质、感情牵扯精力</li>
+      <li>丙辛合水，水为官杀——<strong>合财而化官</strong>，暗示"通过理财/经营走向管理和权力"的路径</li>
+    </ul>
+  </div>
+
+  <h3>壬克丙 — 七杀攻身（关键压力源）</h3>
+  <div class="card water-tint">
+    <p>壬水（时干）克丙火（日干），七杀攻身。这是此命与众不同的核心张力：</p>
+    <ul>
+      <li><strong>壬水为大海之水</strong>，力量强大直接——压力不是小打小闹，而是来自权力、竞争、生存层面</li>
+      <li>七杀在时柱——晚年事业有"杀伐决断"的特质，适合做领导、管理、决策</li>
+      <li>七杀无制则为祸，有制则为权。辰中藏戊可部分制杀，但力量不够——<strong>需要印星化杀才能真正将压力转化为动力</strong></li>
+      <li>丁壬合——午中丁火可合住壬水七杀，暗示"劫财合杀"，即通过竞争对手或合作伙伴的力量化解压力</li>
+    </ul>
+    <p class="cite">——《滴天髓》："何知其人凶，忌神辗转攻。"七杀无制为大忌，有制则化凶为贵。</p>
+  </div>
+
+  <h3>丙克庚 — 日主克偏财</h3>
+  <div class="card metal-tint">
+    <p>丙火克庚金（火克金），日干克月干偏财。</p>
+    <ul>
+      <li>对偏财有"强制控制力"——能主动抓偏财（投资、副业、意外之财）</li>
+      <li>庚金是阳金（大刀/钢铁），丙火克庚是"烈火炼钢"——赚钱有魄力有手段</li>
+    </ul>
+  </div>
+
+  <h3>天干生克链条</h3>
+  <div class="flow-chain">
+    <div class="flow-node" style="background:#f2f3f4;color:#666;">庚辛·财星</div>
+    <div class="flow-arrow">→ 生 →</div>
+    <div class="flow-node" style="background:#eef5ff;color:#2471a3;">壬癸·官杀</div>
+    <div class="flow-arrow">→ 克 →</div>
+    <div class="flow-node" style="background:#fee;color:#c0392b;">丙·日主</div>
+    <div class="flow-arrow">← ? →</div>
+    <div class="flow-node" style="background:#f5f5f7;color:#999;border:2px dashed #ccc;">印星（极弱）</div>
+  </div>
+  <div class="card dark">
+    <p><strong>财生杀、杀攻身</strong> — 钱赚得越多，压力越大；事业做得越大，危机越多。这是"将帅之命"的双刃剑——有驾驭压力的潜质，但前提是身够强、印够旺。</p>
+    <p class="cite">——《子平真诠》："七杀者，克我之神，阳对阳、阴对阴。有制则为偏官，无制则为七杀。"</p>
+  </div>
+</div>
+
+<!-- Chapter 3: 地支关系 -->
+<div class="chapter" id="c3">
+  <div class="chapter-header">
+    <div class="chapter-num">3</div>
+    <div class="chapter-title">地支关系详解</div>
+  </div>
+
+  <h3>子午相冲 — 水火大战</h3>
+  <div class="card fire-tint">
+    <p>月支子水冲日支午火，形成<strong>子午冲</strong>——六冲之中最为激烈的水火对撞。</p>
+    <ul>
+      <li><strong>月支冲日支</strong>：外部环境（工作、社会）与内心自我（婚姻宫）激烈碰撞</li>
+      <li>内心经常矛盾：想自由 vs 被现实约束，想安稳 vs 命运推着走</li>
+      <li>工作环境容易变动——换岗、换城市、换行业</li>
+      <li>感情有波动——婚姻宫受冲，恋爱过程多起伏</li>
+      <li><strong>好的一面</strong>：子午冲最具爆发力，能在剧变中找到突破口</li>
+    </ul>
+  </div>
+
+  <h3>子辰半合水局 — 水势暗增</h3>
+  <div class="card water-tint">
+    <p>月支子 + 时支辰 → 子辰半合水局（缺申）。水局虽不完整，但辰为水库，能收纳蓄积水气。</p>
+    <ul>
+      <li>水势增强——官杀力量被暗中加持</li>
+      <li>辰为水库=压力"蓄水池"——平时压力不发作，但积累到一定程度会集中爆发</li>
+      <li>好处：辰中藏乙木（正印）在水局中"滋养"——水生木、木生火，形成暗中的救命通道</li>
+    </ul>
+  </div>
+
+  <h3>巳午半会火局 — 火根不绝</h3>
+  <div class="card fire-tint">
+    <p>年支巳 + 日支午 → 巳午半会火局（缺未）。巳中藏丙（比肩），午中藏丁（劫财），火势绵延。</p>
+    <p>这是日主在水旺之中仍然"偏弱但不太弱"的根本原因——祖上留了火种。</p>
+  </div>
+
+  <table>
+    <tr><th>关系</th><th>组合</th><th>性质</th><th>强度</th></tr>
+    <tr><td><strong>子午冲</strong></td><td>月子冲日午</td><td>水火大冲</td><td><span class="tag bad">极强</span></td></tr>
+    <tr><td><strong>子辰半合</strong></td><td>月子+时辰</td><td>半合水局</td><td><span class="tag water">中强</span></td></tr>
+    <tr><td><strong>巳午半会</strong></td><td>年巳+日午</td><td>半会火局</td><td><span class="tag fire">中强</span></td></tr>
+    <tr><td><strong>辰午关系</strong></td><td>时辰+日午</td><td>相近无冲</td><td><span class="tag">平和</span></td></tr>
+  </table>
+  <div class="card dark">
+    <p><strong>地支格局核心：上方（巳午）火势抱团，下方（子辰）水势蓄积。</strong>水火两大阵营对峙——人生底色是"在对抗中成长"。不像有的人平静如水，你注定是在冲突中磨炼出来的。</p>
+    <p class="cite">——《渊海子平》："子午卯酉为四正之冲，冲力最大。子午冲者，水火不容，一生多变动。"</p>
+  </div>
+</div>
+
+<!-- Chapter 4: 藏干 -->
+<div class="chapter" id="c4">
+  <div class="chapter-header">
+    <div class="chapter-num">4</div>
+    <div class="chapter-title">藏干透干分析</div>
+  </div>
+  <table>
+    <tr><th>地支</th><th>本气</th><th>中气</th><th>余气</th><th>备注</th></tr>
+    <tr><td>巳（年支）</td><td>丙火·比肩</td><td>庚金·偏财</td><td>戊土·食神</td><td>三藏干中丙、庚透出天干</td></tr>
+    <tr><td>子（月支）</td><td>癸水·正官</td><td>—</td><td>—</td><td>纯而不杂，单一正官</td></tr>
+    <tr><td>午（日支）</td><td>丁火·劫财</td><td>—</td><td>己土·伤官</td><td>劫财+伤官，性格有叛逆种子</td></tr>
+    <tr><td>辰（时支）</td><td>戊土·食神</td><td>乙木·<strong>正印</strong></td><td>癸水·正官</td><td><strong>辰中藏乙是全局唯一的印星根基！</strong></td></tr>
+  </table>
+
+  <div class="card highlight">
+    <h4>关键发现：辰中藏乙 — 暗中的救命稻草</h4>
+    <ul>
+      <li>全局天干无木，印星极度匮乏——但<strong>辰中藏乙木（正印）</strong>是唯一的印星暗根</li>
+      <li>乙木在辰中属"中气"，力量约占30%——不够强大，但<strong>确实存在</strong></li>
+      <li>这说明此人骨子里有学习天赋、领悟能力、贵人缘——只是被深深藏着，需要大运流年来激活</li>
+      <li>辰为水库，水生木——印星虽弱但有水滋养，不会完全枯萎</li>
+    </ul>
+    <p class="cite">——《子平真诠》："印者，生我之神。无印则日主无依，如火无薪。"然辰中乙木虽微，犹胜于全无。</p>
+  </div>
+
+  <div class="card">
+    <h4>透干情况</h4>
+    <ul>
+      <li><strong>已透出</strong>：丙（巳→天干无丙？不，日干本身为丙）、庚（巳→月干）、壬（辰中癸→壬同属水，壬透时干）</li>
+      <li><strong>未透出</strong>：戊（辰巳中藏，天干不见）、乙（辰中藏，天干不见）、丁（午中藏，天干不见）</li>
+      <li>最遗憾的是<strong>乙木不透</strong>——正印有根无苗，才华在但表现不出来</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Chapter 5: 十二长生 -->
+<div class="chapter" id="c5">
+  <div class="chapter-header">
+    <div class="chapter-num">5</div>
+    <div class="chapter-title">十二长生详解</div>
+  </div>
+  <table>
+    <tr><th>柱位</th><th>地支</th><th>长生状态</th><th>含义</th></tr>
+    <tr><td>年支</td><td>巳</td><td><span class="tag good">临官</span></td><td>祖上给你留了"火种"，少年有基本能量支撑</td></tr>
+    <tr><td>月支</td><td>子</td><td><span class="tag">胎</span></td><td>出生环境中丙火像胎儿般弱小，环境对火不友好</td></tr>
+    <tr><td>日支</td><td>午</td><td><span class="tag fire">帝旺</span></td><td><strong>日主坐帝旺——丙火最强状态！内心力量极强</strong></td></tr>
+    <tr><td>时支</td><td>辰</td><td><span class="tag good">冠带</span></td><td>晚年处于"成长上升"状态——越老越有力量</td></tr>
+  </table>
+  <div class="flow-chain">
+    <div class="flow-node" style="background:#eafaf1;color:#1e8449;">临官（年）</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#eef5ff;color:#2471a3;">胎（月）</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fee;color:#c0392b;">帝旺（日）</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#eafaf1;color:#1e8449;">冠带（时）</div>
+  </div>
+  <div class="card">
+    <p><strong>"中间强、两头有支撑"</strong>的结构。与时柱胎位的命不同，此命时柱为冠带——晚年不是重头再来，而是<strong>持续上升</strong>。时柱冠带意味着50岁后仍在成长通道中。</p>
+    <p class="cite">——《三命通会》论十二长生："冠带者，渐有气势之象。如人初加冠、束带，渐有所成。"</p>
+  </div>
+</div>
+
+<!-- Chapter 6: 神煞 -->
+<div class="chapter" id="c6">
+  <div class="chapter-header">
+    <div class="chapter-num">6</div>
+    <div class="chapter-title">神煞详解</div>
+  </div>
+  <table>
+    <tr><th>神煞</th><th>位置</th><th>含义</th></tr>
+    <tr><td><span class="tag good">禄神</span></td><td>年支巳</td><td>丙火禄在巳——少年不愁基本温饱，有自立之本</td></tr>
+    <tr><td><span class="tag fire">桃花</span></td><td>日支午</td><td>巳酉丑桃花在午。日坐桃花，自身魅力强，异性缘好</td></tr>
+    <tr><td><span class="tag bad">羊刃</span></td><td>日支午</td><td>丙火刃在午——极端力量，意志极强但容易冲动偏激</td></tr>
+    <tr><td><span class="tag good">华盖</span></td><td>时支辰</td><td>巳酉丑华盖在丑，但日支午→年支巳查华盖需另法。辰本身有学术孤高之象</td></tr>
+    <tr><td><span class="tag good">文昌</span></td><td>日干查</td><td>丙火文昌在申，命局无申。但辰中乙木正印暗助文才</td></tr>
+    <tr><td><span class="tag bad">阴阳错</span></td><td>日柱丙午</td><td>感情"阴差阳错"，缘分来了时机不对，时机对了缘分跑了</td></tr>
+    <tr><td><span class="tag">亡神</span></td><td>年支巳</td><td>聪明过人但容易把简单事想复杂，多虑</td></tr>
+    <tr><td><span class="tag earth">龙德</span></td><td>时支辰</td><td>辰为龙，时坐龙德——晚年有贵气加持</td></tr>
+  </table>
+  <div class="card dark">
+    <p><strong>禄神+桃花+羊刃</strong>三星同居日柱，性格特征极为鲜明：有能力、有魅力、有脾气。<strong>羊刃坐日支</strong>是最需要注意的性格隐患——冲动时做的决定往往让自己后悔。</p>
+    <p><strong>辰中暗藏正印</strong>为神煞格局加了一层底色——虽然表面看起来冲动、直接，但骨子里有沉思和反省的能力。</p>
+    <p class="cite">——《三命通会》："羊刃者，禄前一位，气势至刚。丙以午为刃，午中丁火劫财，刃旺则刚烈过人。"《协纪辨方书》论神煞起法。</p>
+  </div>
+</div>
+
+<!-- Chapter 7: 五行 -->
+<div class="chapter" id="c7">
+  <div class="chapter-header">
+    <div class="chapter-num">7</div>
+    <div class="chapter-title">五行力量与用神体系</div>
+  </div>
+  <div class="card">
+    <div class="strength-bar">
+      <div class="bar-label" style="color:var(--fire);">火</div>
+      <div class="bar-track"><div class="bar-fill fire" style="width:55%;"></div></div>
+      <span class="tag fire">中偏强</span>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-label" style="color:var(--water);">水</div>
+      <div class="bar-track"><div class="bar-fill water" style="width:50%;"></div></div>
+      <span class="tag water">中等</span>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-label" style="color:var(--metal);">金</div>
+      <div class="bar-track"><div class="bar-fill metal" style="width:45%;"></div></div>
+      <span class="tag metal">中偏弱</span>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-label" style="color:var(--earth);">土</div>
+      <div class="bar-track"><div class="bar-fill earth" style="width:30%;"></div></div>
+      <span class="tag earth">偏弱</span>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-label" style="color:var(--wood);">木</div>
+      <div class="bar-track"><div class="bar-fill wood" style="width:8%;"></div></div>
+      <span class="tag bad">极弱</span>
+    </div>
+  </div>
+  <div class="card dark">
+    <p><strong>身弱偏旺。用神取木（第一）、火（第二）。</strong></p>
+    <p>强的因素：丙坐午帝旺(+++)、年支巳有根(++)、巳午半会火(+)、时支辰冠带(+)<br>
+    弱的因素：生于子月水旺克火(---)、壬水七杀透出直克(--)、子辰半合水(-)、辛庚双透耗身(--)、<strong>天干无木(---)</strong></p>
+    <p>综合判断：火有帝旺做底但水克太重，<strong>身弱</strong>。辰中乙木给了一丝印星暗根，但不够用。</p>
+  </div>
+  <table>
+    <tr><th>层级</th><th>五行</th><th>理由</th></tr>
+    <tr><td><span class="tag good">第一用神</span></td><td><span class="tag wood">木（印星）</span></td><td>全局最缺且最需要。化杀生身一举两得</td></tr>
+    <tr><td><span class="tag good">第二用神</span></td><td><span class="tag fire">火（比劫）</span></td><td>增强日主力量，帮身抗杀</td></tr>
+    <tr><td><span class="tag">喜神</span></td><td><span class="tag earth">土（食伤）</span></td><td>食神制杀，化泄官杀压力</td></tr>
+    <tr><td><span class="tag bad">忌神</span></td><td><span class="tag water">水（官杀）</span></td><td>壬癸已重，再加则身不能担</td></tr>
+    <tr><td><span class="tag bad">仇神</span></td><td><span class="tag metal">金（财星）</span></td><td>耗身且生水，双重不利</td></tr>
+  </table>
+  <p class="cite">——《穷通宝典》调候用神与《子平真诠》扶抑用神在此命高度一致：木（印星）为第一用神，化杀生身为正路。</p>
+</div>
+
+<!-- Chapter 8: 十神性格 -->
+<div class="chapter" id="c8">
+  <div class="chapter-header">
+    <div class="chapter-num">8</div>
+    <div class="chapter-title">十神分析与性格画像</div>
+  </div>
+
+  <h3>十神流通图</h3>
+  <div class="flow-chain">
+    <div class="flow-node" style="background:#f2f3f4;color:#666;">财星（庚辛）</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#eef5ff;color:#2471a3;">官杀（壬癸）</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fee;color:#c0392b;">日主（丙）</div>
+    <div class="flow-arrow">← 微弱</div>
+    <div class="flow-node" style="background:#eafaf1;color:#1e8449;border:2px dashed #27ae60;">印星（乙·暗藏）</div>
+  </div>
+
+  <h3>四层性格结构</h3>
+  <div class="grid-2">
+    <div class="card fire-tint">
+      <h4>第一层：外在呈现</h4>
+      <p>热情大方、敢说敢做、行动力强。有领导气质（七杀透干），给人"有主见、有魄力"的第一印象。偏财双透+桃花——社交能力强，异性缘好。</p>
+    </div>
+    <div class="card water-tint">
+      <h4>第二层：内在矛盾</h4>
+      <p>表面霸气背后有深层不安全感（印弱）。壬水七杀直克丙火——外界压力大，但死扛不示弱（羊刃）。子午冲带来的内心撕扯：自由vs责任、野心vs能力。</p>
+    </div>
+    <div class="card earth-tint">
+      <h4>第三层：深层驱动</h4>
+      <p>核心驱动力是<strong>"掌控"</strong>。七杀人天生不甘被人管、被人压。辰中乙木暗藏——内心有"我终将出头"的直觉。偏正财混杂——物质欲望是行动的重要燃料。</p>
+    </div>
+    <div class="card dark">
+      <h4>第四层：盲区与陷阱</h4>
+      <ul>
+        <li><strong>急躁冲动</strong>（羊刃+七杀）——遇事容易先动手再想后果</li>
+        <li><strong>压力内化</strong>（辰库蓄水）——平时看着没事，压力积到爆发时一发不可收</li>
+        <li><strong>信任门槛高</strong>（七杀+无印）——不容易真正信任别人，容易独断</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>与他人的互动模式</h3>
+  <table>
+    <tr><th>场景</th><th>典型表现</th><th>根源</th></tr>
+    <tr><td>对权威</td><td>表面不服、暗中较劲、但有底线</td><td>七杀攻身+羊刃抵抗</td></tr>
+    <tr><td>对朋友</td><td>仗义大方但核心圈子很小</td><td>丙火热情+七杀警惕</td></tr>
+    <tr><td>对伴侣</td><td>保护欲强、控制欲也强</td><td>丙辛合财+七杀主控</td></tr>
+    <tr><td>独处时</td><td>反复思考、规划、暗中蓄力</td><td>辰库蓄积+乙木暗思</td></tr>
+  </table>
+  <p class="cite">——《神峰通考》："七杀者，偏官也。有制则为贵，无制则为灾。制化得宜，其人有谋略、有胆识、能决断。"</p>
+</div>
+
+<!-- Chapter 9: 六亲 -->
+<div class="chapter" id="c9">
+  <div class="chapter-header">
+    <div class="chapter-num">9</div>
+    <div class="chapter-title">六亲详论</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>父亲（偏财庚金+月柱）</h4>
+      <p>庚金坐子水为"死"地——父亲事业在你出生前后并不旺盛。可能为人正直、有能力但运势受限。丙克庚——你和父亲理念不太一样，沟通方式偏"硬碰硬"。</p>
+    </div>
+    <div class="card">
+      <h4>母亲（印星——辰中暗藏乙木）</h4>
+      <p>印星极弱不透——母亲庇护力有限，不是"没有母爱"而是母亲自身条件或精力有限，给不了你太多实际支持。辰中乙木暗藏——母亲影响虽然表面不明显，但骨子里对你性格形成有深层塑造。</p>
+    </div>
+  </div>
+
+  <div class="card fire-tint">
+    <h4>配偶（正财辛金+日支午火）</h4>
+    <ul>
+      <li>丙辛合——和妻子有强吸引力（合为缘分），彼此有天然的化学反应</li>
+      <li>日支午火羊刃——另一半性格不温顺，有主见、有脾气、有能力</li>
+      <li>午中丁（劫财）+己（伤官）——感情中有争执因素</li>
+      <li><strong>配偶画像</strong>：外表出众（日支桃花），性格刚强，可能在财务或管理领域有能力。有激情也有冲突。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>子女（时柱壬辰）</h4>
+    <p>壬水七杀坐时柱——子女有个性、有主见，不好管教但有出息。辰为龙，时柱坐辰——子女有贵气。辰中乙木正印暗藏——子女可能在文化、教育领域有发展。子女可能来得偏晚（30+）。</p>
+  </div>
+  <p class="cite">——《渊海子平》论六亲："偏财为父，正印为母（男命）。正财为妻。时柱为子女宫。"</p>
+</div>
+
+<!-- Chapter 10: 财运 -->
+<div class="chapter" id="c10">
+  <div class="chapter-header">
+    <div class="chapter-num">10</div>
+    <div class="chapter-title">财运详论</div>
+  </div>
+  <div class="card highlight">
+    <p><strong>偏正财双透（庚辛联手）</strong>——财缘很好，一辈子不太缺赚钱机会。但身弱财旺的核心问题：钱来了，接不接得住？</p>
+  </div>
+  <table>
+    <tr><th>维度</th><th>分析</th></tr>
+    <tr><td>赚钱能力</td><td><span class="tag good">强</span> 财星双透+丙辛合财，求财意识和天赋极好</td></tr>
+    <tr><td>赚钱方式</td><td>偏正财混杂——正职+副业+投资，来源多元。七杀人偏好高风险高回报的方式</td></tr>
+    <tr><td>守财能力</td><td><span class="tag bad">偏弱</span> 身弱财旺，钱来了容易留不住。冲动消费+社交花费是主要漏财点</td></tr>
+    <tr><td>大财时机</td><td>39岁后（丙申大运），比肩帮身+财星长生，身旺能担财，是真正赚大钱的阶段</td></tr>
+  </table>
+
+  <h3>各阶段财运</h3>
+  <table>
+    <tr><th>阶段</th><th>大运</th><th>财运</th></tr>
+    <tr><td>9-18岁</td><td>己亥</td><td>伤官运，花销大于收入，学生时代不太宽裕</td></tr>
+    <tr><td>19-28岁</td><td>戊戌</td><td>食神制杀，有赚钱想法和机会，但身弱担财辛苦</td></tr>
+    <tr><td>29-38岁</td><td>丁酉</td><td>劫财+偏财。有财可赚但竞争激烈，赚的辛苦钱</td></tr>
+    <tr><td>39-48岁</td><td>丙申</td><td><span class="tag good">上升期</span> 比肩帮身+偏财长生，事业和财运开始起飞</td></tr>
+    <tr><td>49-58岁</td><td>乙未</td><td><span class="tag good">黄金期</span> 正印大运！贵人+名声变现，收入质变</td></tr>
+    <tr><td>59-68岁</td><td>甲午</td><td><span class="tag good">巅峰期</span> 木火通明！名利双收，财富自由</td></tr>
+  </table>
+  <p class="cite">——《滴天髓》："何知其人富，财气通门户。"身旺方能担财，印星到来是财运质变的前提。</p>
+</div>
+
+<!-- Chapter 11: 事业 -->
+<div class="chapter" id="c11">
+  <div class="chapter-header">
+    <div class="chapter-num">11</div>
+    <div class="chapter-title">事业详论</div>
+  </div>
+  <div class="card">
+    <p>事业模式：<strong>七杀+偏正财+暗印</strong>——天生有"将帅"气质。不是靠温和取胜的人，而是靠魄力、决断力、执行力。</p>
+    <p>七杀透时柱意味着晚年事业格局大——前半生蓄力，后半生爆发。</p>
+  </div>
+
+  <h3>最适合的方向</h3>
+  <div class="grid-2">
+    <div class="card fire-tint">
+      <h4>火属性（第二用神）</h4>
+      <p>互联网、新媒体、直播、短视频、AIGC、广告、影视、能源（光伏）、餐饮、电竞</p>
+    </div>
+    <div class="card wood-tint">
+      <h4>木属性（第一用神）</h4>
+      <p>教育、培训、出版、文化、服装、园林、健康养生、中医、环保</p>
+    </div>
+  </div>
+  <div class="card highlight">
+    <h4>七杀命的最佳赛道</h4>
+    <ul>
+      <li>需要竞争和博弈的行业（金融、商业、销售管理）</li>
+      <li>需要快速决策的行业（互联网、创业、投资）</li>
+      <li>木+火组合：内容创业（木的创意+火的传播）、知识付费、AIGC+教育</li>
+      <li><strong>不适合</strong>：按部就班的文职、需要极度耐心的研究型工作</li>
+    </ul>
+    <p class="cite">——《穷通宝典》："丙火调候得当，为人光明磊落，宜居高位。"七杀有制则威权加身。</p>
+  </div>
+
+  <h3>事业节奏</h3>
+  <div class="timeline">
+    <div class="timeline-item current">
+      <div class="tl-label">19-28岁 · 蓄力探索期（戊戌运）</div>
+      <div class="tl-desc">食神制杀，压力有出口。多试错、找方向、积累技能和人脉。当前大运最重要的是"选对赛道"。</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">29-38岁 · 竞争打拼期（丁酉运）</div>
+      <div class="tl-desc">劫财+偏财，竞争激烈但有机会。丁壬合——劫财合走七杀压力，事业阻力减小。</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">39-48岁 · 崛起期（丙申运）</div>
+      <div class="tl-desc">比肩帮身+偏财长生，身旺能担财担官。事业明显上台阶。</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">49-58岁 · 绽放期（乙未运）⭐</div>
+      <div class="tl-desc"><strong>正印终于来了！</strong>贵人、名声、社会地位全面提升。午未合——大运与日支合，内心安定。这是事业巅峰。</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">59-68岁 · 巅峰期（甲午运）⭐⭐</div>
+      <div class="tl-desc"><strong>木火通明！偏印+帝旺。</strong>甲木大运补齐一生最缺的调候用神。60岁左右是人生最高光时刻。</div>
+    </div>
+  </div>
+</div>
+
+<!-- Chapter 12: 感情 -->
+<div class="chapter" id="c12">
+  <div class="chapter-header">
+    <div class="chapter-num">12</div>
+    <div class="chapter-title">婚姻感情</div>
+  </div>
+  <table>
+    <tr><th>因素</th><th>影响</th></tr>
+    <tr><td>丙辛合正财</td><td>对异性有天然吸引力，易被"精明能干型"女性吸引</td></tr>
+    <tr><td>日支桃花</td><td>自身魅力强，异性缘好</td></tr>
+    <tr><td>偏正财混杂</td><td>容易同时对多个异性产生好感，感情选择困难</td></tr>
+    <tr><td>子午冲婚姻宫</td><td>感情多变动多波折，婚前可能经历几段</td></tr>
+    <tr><td>阴阳错</td><td>早年感情"有缘无份"——错的时间遇对的人</td></tr>
+    <tr><td>羊刃坐日支</td><td>配偶个性强，容易硬碰硬</td></tr>
+    <tr><td>七杀透时干</td><td>晚婚有利——事业稳定后再婚姻更幸福</td></tr>
+  </table>
+
+  <h3>理想配偶</h3>
+  <div class="card wood-tint">
+    <ul>
+      <li><strong>日主</strong>：甲乙木日主最佳（木生火，对你是印星，给你安全感和滋养）</li>
+      <li><strong>出生月份</strong>：寅卯月（春天）生人优先</li>
+      <li><strong>性格</strong>：温润但有主见——太弱你瞧不上，太强互相消耗。能包容你的急躁，又不让你太任性</li>
+      <li><strong>八字互补</strong>：对方命局木旺或印星旺，能补你最缺的印</li>
+    </ul>
+  </div>
+
+  <h3>感情时间窗口</h3>
+  <table>
+    <tr><th>年份</th><th>流年</th><th>信号</th></tr>
+    <tr><td>2027</td><td>丁未</td><td>劫财+食伤库。未中乙木暗贵人，有机会遇到对的人</td></tr>
+    <tr><td><strong>2028</strong></td><td><strong>戊申</strong></td><td>食神+偏财长生。<strong>较好姻缘年</strong>——财星长生位，感情有新的开始</td></tr>
+    <tr><td>2031</td><td>辛亥</td><td>正财+正官。适合结婚、确定关系。亥中甲木偏印助力</td></tr>
+    <tr><td>2033</td><td>癸丑</td><td>进入丁酉运。若之前未定，此年也是重要节点</td></tr>
+  </table>
+  <p class="cite">——《神峰通考》论婚姻："日支坐刃者，配偶性刚。男命日坐桃花刃，妻美而烈。"</p>
+</div>
+
+<!-- Chapter 13: 健康 -->
+<div class="chapter" id="c13">
+  <div class="chapter-header">
+    <div class="chapter-num">13</div>
+    <div class="chapter-title">健康详论</div>
+  </div>
+  <table>
+    <tr><th>部位</th><th>风险</th><th>原因</th></tr>
+    <tr><td>心脏/血管</td><td><span class="tag bad">高</span></td><td>丙火=心脏，午火=心火，子午冲直冲心血管系统</td></tr>
+    <tr><td>眼睛/视力</td><td><span class="tag bad">中高</span></td><td>丙火主眼目，壬水七杀克丙伤目，用眼过度风险大</td></tr>
+    <tr><td>肝胆</td><td><span class="tag bad">中</span></td><td>木极弱，肝木疏泄功能不足。情绪压抑伤肝</td></tr>
+    <tr><td>肾脏/泌尿</td><td><span class="tag">中</span></td><td>子水+壬水+辰库——水势偏重，肾脏负担大</td></tr>
+    <tr><td>脾胃/消化</td><td><span class="tag">中</span></td><td>辰土为湿土，土弱不能制水——消化系统偏弱</td></tr>
+    <tr><td>精神/睡眠</td><td><span class="tag bad">中高</span></td><td>七杀攻身+子午冲——焦虑、失眠、思虑过重</td></tr>
+  </table>
+  <div class="card">
+    <h4>养生建议</h4>
+    <ul>
+      <li><strong>护心</strong>：有氧运动保护心血管（跑步、游泳），避免过度激烈运动</li>
+      <li><strong>养肝</strong>：早睡（23点前），少生闷气，多接触绿色和自然</li>
+      <li><strong>护眼</strong>：减少长时间看屏幕，定期检查视力</li>
+      <li><strong>调情绪</strong>：七杀人压力容易内化。冥想、运动、找信任的人倾诉</li>
+      <li><strong>忌酗酒</strong>：木弱的人肝功能偏弱，酒精对你伤害比常人更大</li>
+    </ul>
+  </div>
+  <div class="warn">健康建议仅供参考，具体症状请咨询专业医生。命理分析不能替代医学诊断。</div>
+</div>
+
+<!-- Chapter 14: 大运 -->
+<div class="chapter" id="c14">
+  <div class="chapter-header">
+    <div class="chapter-num">14</div>
+    <div class="chapter-title">大运逐步详解</div>
+  </div>
+  <p>男命辛巳年（阴年），逆排。9岁起运（2010年）。</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-label">9-18岁 · 己亥运（2010-2019）</div>
+      <div class="tl-desc">
+        伤官+水之禄位。己土伤官泄身——叛逆期明显，不服管教，想法多。亥水加重水势——外部压力大，身弱更弱。<br>
+        <strong>但亥中藏甲木！</strong>偏印暗藏在大运中——虽然表面看起来叛逆不听话，但内心在悄悄成长。<br>
+        少年时期辛苦、压力大，但也在磨炼中建立了独立性。
+      </div>
+    </div>
+    <div class="timeline-item current">
+      <div class="tl-label">19-28岁 · 戊戌运（2020-2029）← 当前</div>
+      <div class="tl-desc">
+        <strong>食神+火库 = 转折之运！</strong><br>
+        戊土食神制壬水七杀——压力终于有了出口和化解之道。<br>
+        戌为火库（午戌半合火局），火势增强，身弱得到补益。<br>
+        这步运比上一步好得多：有方向感、有赚钱的想法和执行力、社交圈扩大。<br>
+        <strong>当前最重要的任务</strong>：选对赛道，积累核心能力和资源。
+      </div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">29-38岁 · 丁酉运（2030-2039）</div>
+      <div class="tl-desc">
+        劫财+偏财。丁火劫财帮身，酉金偏财来了——有财可赚。<br>
+        <strong>关键：丁壬合</strong>——丁火合走壬水七杀！七杀被合住，压力大幅减小。<br>
+        这步运事业竞争激烈但有突破。需要注意劫财争财——合作分利方面要谨慎。
+      </div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">39-48岁 · 丙申运（2040-2049）</div>
+      <div class="tl-desc">
+        比肩+偏财长生。丙火比肩帮身——身旺可以担财了！申金偏财长生——财运从根本上好起来。<br>
+        事业上台阶，开始有"老板格局"。<br>
+        注意：大运丙与日干丙同→伏吟，可能有居住地或事业方向的变动。
+      </div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">49-58岁 · 乙未运（2050-2059）⭐ 正印到来</div>
+      <div class="tl-desc">
+        <strong>全局最缺的印星终于以大运形式到来！</strong>乙木正印——贵人、名声、靠山、学识全面补齐。<br>
+        未中丁火+乙木→木火相生。午未合→大运与日支合，内心安定。<br>
+        社会地位大幅提升，内心不安全感彻底缓解。可能出书、出课、获得行业认可。
+      </div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">59-68岁 · 甲午运（2060-2069）⭐⭐ 木火通明</div>
+      <div class="tl-desc">
+        <strong>甲木偏印+午火帝旺 = 木火通明！</strong>这是命理中最高等级的吉象之一。<br>
+        甲木是穷通宝典第一调候用神，60年来第一次以大运天干出现。<br>
+        名利双收、智慧通达。晚年是人生真正的高光时刻。
+      </div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">69-78岁 · 癸巳运（2070-2079）</div>
+      <div class="tl-desc">正官+禄位。巳为丙火之禄，虽有正官压力但根基稳固。晚年不寂寞，仍有事可做。</div>
+    </div>
+  </div>
+  <div class="card dark">
+    <p>大运曲线呈<strong>"持续缓慢上升，49岁后加速飞升"</strong>的态势。典型的<strong>"大器晚成、厚积薄发"</strong>命格。前半生的每一份辛苦都是后半生的资本。</p>
+    <p class="cite">——《子平真诠》："大运者，人生之大势也。一步大运管十年吉凶。运好则事事顺遂，运衰则处处受阻。"</p>
+  </div>
+</div>
+
+<!-- Chapter 15: 2026流年 -->
+<div class="chapter" id="c15">
+  <div class="chapter-header">
+    <div class="chapter-num">15</div>
+    <div class="chapter-title">2026 丙午流年详论</div>
+  </div>
+
+  <div class="card highlight">
+    <p>流年丙午与日柱丙午完全相同 — <strong>伏吟年！</strong></p>
+    <p>伏吟年的核心含义："反复、重复、回到原点"。变动能量极强。当前大运戊戌（食神+火库）→火势增强，有底气面对变化。</p>
+    <p>关键词：<strong>变 · 冲 · 抉择 · 破旧立新</strong></p>
+  </div>
+
+  <h3>五行力量变化</h3>
+  <div class="card">
+    <p>原局+大运戊戌+流年丙午 → <strong>火土力量大增！</strong>食神制杀效果加倍，压力感减小。</p>
+    <ul>
+      <li>流年丙 + 原局辛 = 丙辛合水（合财）——求财欲望强烈</li>
+      <li>流年午 + 日支午 = 午午自刑——自我折磨、注意冲动</li>
+      <li>流年午 + 月支子 = 子午冲——工作环境大变动</li>
+      <li>大运戊 + 流年丙 = 火生土，食神泄秀——才华输出旺盛</li>
+    </ul>
+  </div>
+
+  <h3>逐月分析</h3>
+  <div class="month-grid">
+    <div class="month-card lucky">
+      <div class="month-title">2月 庚寅 · 立春</div>
+      <div class="month-desc">偏财+偏印。寅木印星短暂出现！上半年最好月份之一。有贵人、有方向。</div>
+    </div>
+    <div class="month-card lucky">
+      <div class="month-title">3月 辛卯 · 惊蛰</div>
+      <div class="month-desc">正财+正印。卯木正印——适合签约、谈合作、做重要决定、学习充电。</div>
+    </div>
+    <div class="month-card">
+      <div class="month-title">4月 壬辰 · 清明</div>
+      <div class="month-desc">七杀+食神库。与时柱壬辰相同，压力重现但有化解。沉着应对。</div>
+    </div>
+    <div class="month-card">
+      <div class="month-title">5月 癸巳 · 立夏</div>
+      <div class="month-desc">正官+禄位。有新任务新责任，巳火帮身，可以扛。</div>
+    </div>
+    <div class="month-card key">
+      <div class="month-title">6月 甲午 · 芒种 ⭐</div>
+      <div class="month-desc"><strong>全年最关键月！</strong>甲木偏印透出+坐午帝旺。第一调候用神现身！重大贵人、方向性转折。</div>
+    </div>
+    <div class="month-card lucky">
+      <div class="month-title">7月 乙未 · 小暑</div>
+      <div class="month-desc">正印+食伤库。乙木正印接力甲木。适合学习、拜师、考证。午未合心情好。</div>
+    </div>
+    <div class="month-card">
+      <div class="month-title">8月 丙申 · 立秋</div>
+      <div class="month-desc">比肩+偏财长生。有赚钱机会但花销也大。注意不要冲动投资。</div>
+    </div>
+    <div class="month-card">
+      <div class="month-title">9月 丁酉 · 白露</div>
+      <div class="month-desc">劫财+偏财。竞争激烈，可能有朋友求财来找你。保持理性。</div>
+    </div>
+    <div class="month-card lucky">
+      <div class="month-title">10月 戊戌 · 寒露</div>
+      <div class="month-desc">食神+火库。与大运同柱——力量倍增。适合做内容、出作品、展示才华。</div>
+    </div>
+    <div class="month-card danger">
+      <div class="month-title">11月 己亥 · 立冬 ⚠</div>
+      <div class="month-desc"><strong>最需谨慎！</strong>伤官+亥水加重。伤官见官易生口舌是非。务必谨言慎行，少说多做。</div>
+    </div>
+    <div class="month-card">
+      <div class="month-title">12月 庚子 · 大雪</div>
+      <div class="month-desc">偏财+正官。水旺月份，收敛蛰伏。盘点全年，规划来年。</div>
+    </div>
+  </div>
+
+  <div class="card dark">
+    <h4>2026年度策略</h4>
+    <ul>
+      <li><strong>上半年（2-7月）</strong>：布局期。尤其<strong>6月甲午</strong>是全年高光——重大决策放在这个月</li>
+      <li><strong>下半年（8-12月）</strong>：执行期。10月戊戌月是出成果的窗口。<strong>11月低调少说多做</strong></li>
+      <li><strong>全年红线</strong>：伏吟年变动大，大事"睡三天再决定"。健康是底线，尤其护心护眼</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Chapter 16: 未来流年 -->
+<div class="chapter" id="c16">
+  <div class="chapter-header">
+    <div class="chapter-num">16</div>
+    <div class="chapter-title">2027-2035 流年概览</div>
+  </div>
+  <table>
+    <tr><th>年份</th><th>流年</th><th>十神</th><th>关键词</th></tr>
+    <tr><td>2027</td><td>丁未</td><td>劫财+食伤库</td><td>合作赚钱、社交扩张。未中乙木正印暗助</td></tr>
+    <tr><td><strong>2028</strong></td><td><strong>戊申</strong></td><td><strong>食神+偏财长生</strong></td><td><span class="tag good">好年</span> 才华变现、有新项目产出、姻缘年</td></tr>
+    <tr><td>2029</td><td>己酉</td><td>伤官+偏财</td><td>赚得到但容易得罪人。戊戌运最后一年，做好交接准备</td></tr>
+    <tr><td><strong>2030</strong></td><td><strong>庚戌</strong></td><td><strong>偏财+火库</strong></td><td>进入丁酉运。有大笔进账机会，三十而立</td></tr>
+    <tr><td>2031</td><td>辛亥</td><td>正财+正印长生</td><td><span class="tag good">好年</span> 适合结婚/签长期合同。亥中甲木暗贵人</td></tr>
+    <tr><td>2032</td><td>壬子</td><td>七杀+正官</td><td>压力年。壬子与时柱壬辰、月柱庚子呼应，需沉着</td></tr>
+    <tr><td>2033</td><td>癸丑</td><td>正官+伤官库</td><td>事业责任加重，有蓄积</td></tr>
+    <tr><td><strong>2034</strong></td><td><strong>甲寅</strong></td><td><strong>偏印+偏印</strong></td><td><span class="tag good">大吉</span> 最缺的木天地同现！拜师得大贵人</td></tr>
+    <tr><td><strong>2035</strong></td><td><strong>乙卯</strong></td><td><strong>正印+正印</strong></td><td><span class="tag good">大吉</span> 双正印年，学业/名声/地位跃迁</td></tr>
+  </table>
+</div>
+
+<!-- Chapter 17: 转运 -->
+<div class="chapter" id="c17">
+  <div class="chapter-header">
+    <div class="chapter-num">17</div>
+    <div class="chapter-title">转运实操建议</div>
+  </div>
+
+  <h3>方位择取</h3>
+  <table>
+    <tr><th>方位</th><th>五行</th><th>评级</th><th>建议</th></tr>
+    <tr><td><strong>东方</strong></td><td><span class="tag wood">木</span></td><td><span class="tag good">最佳</span></td><td>上海、杭州、南京、苏州</td></tr>
+    <tr><td><strong>东南</strong></td><td>木火</td><td><span class="tag good">最佳</span></td><td>上海、福建——木火兼得</td></tr>
+    <tr><td><strong>南方</strong></td><td><span class="tag fire">火</span></td><td><span class="tag good">好</span></td><td>深圳、广州、厦门——汕尾本身属南方，在南方有火的根基</td></tr>
+    <tr><td>北方</td><td><span class="tag water">水</span></td><td><span class="tag bad">忌</span></td><td>北京可以短期去但不宜长期定居</td></tr>
+    <tr><td>西方</td><td><span class="tag metal">金</span></td><td><span class="tag bad">仇</span></td><td>成都、重庆、西安不是首选</td></tr>
+  </table>
+
+  <h3>颜色与环境</h3>
+  <div class="grid-2">
+    <div class="card wood-tint">
+      <h4>首选：绿色系</h4>
+      <p>浅绿、墨绿、翠绿——直接补木。办公桌放真绿植（富贵竹、绿萝）。木质家具优于金属家具。卧室窗帘用绿色调。</p>
+    </div>
+    <div class="card fire-tint">
+      <h4>次选：红色系</h4>
+      <p>酒红、砖红、橙红——补火助身。灯光用暖色调。采光要好——丙火人需要充足阳光。</p>
+    </div>
+  </div>
+
+  <h3>数字与饰品</h3>
+  <table>
+    <tr><th>属性</th><th>有利</th><th>不利</th></tr>
+    <tr><td>数字</td><td>3、4（木）、9、0（火）</td><td>1、6（水）、7、8（金）</td></tr>
+    <tr><td>饰品</td><td>木质手串（小叶紫檀/沉香）、红玛瑙、绿幽灵、翡翠</td><td>大量金银首饰、黑曜石</td></tr>
+  </table>
+
+  <h3>社交贵人</h3>
+  <div class="card">
+    <ul>
+      <li><strong>最能帮你</strong>：春天（寅卯月）出生的人、甲乙木日主的人——这些人自带你最缺的印星能量</li>
+      <li><strong>保持距离</strong>：秋天（申酉月）金旺之人——耗你精力，生水克你</li>
+      <li>多进学习型社群（木属性），多参加行业峰会（火属性）</li>
+    </ul>
+  </div>
+
+  <h3>季节节奏</h3>
+  <div class="month-grid">
+    <div class="month-card lucky">
+      <div class="month-title">春（2-4月）</div>
+      <div class="month-desc">最适合"播种"——新项目、新计划放在春天启动</div>
+    </div>
+    <div class="month-card key">
+      <div class="month-title">夏（5-7月）</div>
+      <div class="month-desc">"冲刺"季——火旺帮身，全力以赴出成果</div>
+    </div>
+    <div class="month-card">
+      <div class="month-title">秋（8-10月）</div>
+      <div class="month-desc">注意守成——金旺克木，不宜大变动</div>
+    </div>
+    <div class="month-card danger">
+      <div class="month-title">冬（11-1月）</div>
+      <div class="month-desc">"蛰伏"季——水旺不利，适合读书充电、蓄积能量</div>
+    </div>
+  </div>
+</div>
+
+<!-- Chapter 18: 命盘叙事 -->
+<div class="chapter" id="c18">
+  <div class="chapter-header">
+    <div class="chapter-num">18</div>
+    <div class="chapter-title">命盘核心叙事</div>
+  </div>
+
+  <blockquote>
+    冬日骄阳，七杀藏龙。生于寒月而坐帝旺不灭，壬水直克却有辰中暗印相护。前半生如利剑在鞘，后半生木火通明、威震四方。此命格局——厚积薄发，大器晚成。
+  </blockquote>
+
+  <h3>人生三幕</h3>
+  <div class="timeline">
+    <div class="timeline-item current">
+      <div class="tl-label">第一幕：利剑在鞘（9-38岁）</div>
+      <div class="tl-desc">
+        生在冬月，七杀压身，印星暗藏不透。有野心、有能力，但时机未到。<br>
+        财星双透——赚钱机会不缺。身弱——赚得辛苦。七杀——压力如影随形。<br>
+        但辰中乙木是暗中的护身符——你骨子里的学习力和悟性，会在关键时刻救你。<br>
+        <strong>任务：磨剑——选准方向，积累核心竞争力，控制冲动，不要过早暴露。</strong>
+      </div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">第二幕：出鞘试锋（39-48岁）</div>
+      <div class="tl-desc">
+        丙申大运，比肩帮身+偏财长生。身旺能担财，能驾驭七杀的压力。<br>
+        事业开始真正上轨道，从打工者/执行者变成决策者/管理者。<br>
+        <strong>关键词：崛起、积累、建立根基。</strong>
+      </div>
+    </div>
+    <div class="timeline-item future">
+      <div class="tl-label">第三幕：木火通明（49岁后）</div>
+      <div class="tl-desc">
+        乙未（正印）、甲午（偏印+帝旺）——连续20年印星大运，一生最缺的"药"终于到来。<br>
+        木生火、火势大振。七杀被印化，从压力源变成权力源。<br>
+        <strong>关键词：绽放、通达、名利双收。</strong>这是你人生真正的主场。
+      </div>
+    </div>
+  </div>
+
+  <h3>当前最重要的三件事</h3>
+  <div class="card highlight">
+    <ol>
+      <li><strong>补木</strong>——方位、行业、环境、社交圈全面向"木"靠拢。木是你一生的调候良药，越早补越受益</li>
+      <li><strong>制冲动</strong>——羊刃+七杀=火药桶。大事"睡三天再决定"，冲动时绝不做不可逆的决定</li>
+      <li><strong>选赛道</strong>——当前戊戌运是选方向的黄金期。选对了，后面30年顺水推舟；选错了，要等到39岁重新来过</li>
+    </ol>
+  </div>
+
+  <div class="card dark">
+    <p style="font-size:1.05em;line-height:2;"><strong>写给命主的话：</strong></p>
+    <p>你的命盘是一个"极致的延迟满足"设计——前半生磨炼心性，后半生收获成果。</p>
+    <p>七杀透干不是诅咒，而是"将帅之气"。历史上的将军、企业家、开拓者，多半是七杀命。区别在于：有印化杀为权，无印则杀为灾。你的印星虽然来得晚，但<strong>辰中乙木是预埋的伏笔</strong>——命运在告诉你：你的好运不是没有，是还在路上。</p>
+    <p><strong>丙火最怕什么？不是壬水的七杀、不是庚辛的消耗——最怕自己熄灭。你坐帝旺，内心之火不可能灭。只要你不放弃，49岁后的木火通明，将照亮你此前走过的每一段暗路。</strong></p>
+    <p class="cite">——《滴天髓》："丙火猛烈，欺霜侮雪。"寒冬之丙，终将等到春天。</p>
+  </div>
+</div>
+
+<!-- Chapter 19: 历史校准 -->
+<div class="chapter" id="c19">
+  <div class="chapter-header">
+    <div class="chapter-num">19</div>
+    <div class="chapter-title">命理校准验证</div>
+  </div>
+
+  <div class="card highlight">
+    <p>以下是根据命盘推演的<strong>已发生事件预测</strong>，请对照实际经历验证准确度，以便进一步校准分析：</p>
+  </div>
+
+  <div class="card">
+    <h4>验证1：2010-2013年（9-12岁，己亥运初期）</h4>
+    <p>9岁进入己亥大运，伤官+绝地。亥水加重命局水势，丙火更弱。这几年应该<strong>学业压力增大或家庭环境有变动</strong>——可能转学、搬家、父母工作调动，或者性格变得叛逆不听话。伤官运的孩子通常"想法多、嘴巴快、容易顶嘴"。</p>
+    <p><strong>是否准确？</strong></p>
+  </div>
+
+  <div class="card">
+    <h4>验证2：2017年丁酉流年（15-16岁）</h4>
+    <p>丁酉流年，劫财+偏财。丁壬合——流年丁火合走时柱壬水七杀，压力暂时缓解。但酉金偏财来——这一年可能<strong>对金钱开始有了明确意识</strong>，或者有了第一次"赚钱/花大钱"的经历。也可能是社交圈发生明显变化。</p>
+    <p><strong>是否准确？</strong></p>
+  </div>
+
+  <div class="card">
+    <h4>验证3：2019-2020年（17-19岁，己亥运→戊戌运交接）</h4>
+    <p>2019己亥年=大运伏吟（己亥运行己亥年），极不稳定的一年。2020庚子年进入戊戌大运，<strong>人生方向发生重大转折</strong>——很可能是高考/升学，或者家庭大事件。从己亥的叛逆混沌，切换到戊戌的有方向感——这两年应该是"从迷茫到清醒"的转折。</p>
+    <p><strong>是否准确？</strong></p>
+  </div>
+
+  <div class="card">
+    <h4>验证4：2022-2024年（20-23岁，戊戌运中期）</h4>
+    <p>壬寅(2022)年——七杀+偏印，寅中甲木偏印短暂出现，应该有<strong>"找到方向或贵人"</strong>的感觉。癸卯(2023)年——正官+正印，卯木正印出现，可能进入新环境或获得某个重要机会。甲辰(2024)年——偏印+时柱伏吟（甲辰与壬辰五行相近），思考深入、方向进一步明确。</p>
+    <p><strong>是否准确？</strong></p>
+  </div>
+
+  <div class="card">
+    <h4>验证5：性格与人际特征</h4>
+    <p>根据命盘结构，你应该是：</p>
+    <ul>
+      <li><strong>外表热情、敢说敢做</strong>，但内心有不为人知的压力和不安全感</li>
+      <li><strong>脾气来得快</strong>——容易冲动，事后又后悔（羊刃+七杀）</li>
+      <li><strong>不太服管</strong>——从小对权威有抵触心理（七杀+伤官运）</li>
+      <li><strong>对赚钱有天然敏感度</strong>——可能很早就有商业意识</li>
+      <li>和父亲关系有些微妙——<strong>有距离感但不是没有感情</strong></li>
+    </ul>
+    <p><strong>是否准确？</strong></p>
+  </div>
+
+  <div class="card dark">
+    <p><strong>校准说明</strong>：以上5个验证点基于命盘逻辑推导，结合《千里命稿》的实证方法。如果3个以上准确，说明排盘和用神判断基本正确。如果有重大偏差，可能需要重新审视时辰或调整用神体系。</p>
+    <p>欢迎反馈验证结果，可据此进一步细化分析。</p>
+    <p class="cite">——《千里命稿》："论命当以事实为验。理论再精，不合实际则须反思。"</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>丙火男命 · 八字深度分析报告</p>
+  <p style="margin-top:4px;">辛巳年 · 庚子月 · 丙午日 · 壬辰时</p>
+  <p style="margin-top:4px;">农历二〇〇一年十月二十五 辰时 · 汕尾</p>
+  <p style="margin-top:12px;">分析体系：子平八字 · 参考典籍：穷通宝典、滴天髓、三命通会、子平真诠、渊海子平、协纪辨方书、千里命稿、神峰通考</p>
+  <p style="margin-top:8px;font-size:0.8em;opacity:0.6;">命理分析属传统文化参考体系，所有建议需结合实际情况理性判断。</p>
+</div>
+
+</body>
+</html>

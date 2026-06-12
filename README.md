@@ -15,6 +15,7 @@ Claude Code 八字命理深度分析 Skill。
 ```
 bazi-master-skill/
 ├── SKILL.md                    # Skill 入口（Claude Code 自动识别）
+├── USAGE.md                    # 详细使用操作指南
 ├── scripts/
 │   └── paipan.py               # 精确排盘计算器
 ├── references/
@@ -23,18 +24,30 @@ bazi-master-skill/
 │   ├── shichen-table.md        # 时辰对照表
 │   └── wuxing-tables.md        # 五行/天干地支/十神参考表
 └── templates/
+    ├── report-example.html     # 完整19章报告样例
     └── report-style.css        # HTML 报告组件清单
 ```
 
-## 使用方式
+## 安装与使用
 
-将此目录放入 Claude Code 可访问的路径，对话中说"算八字"、"排八字"等触发词即可。
+**详细操作指南见 [USAGE.md](USAGE.md)**（安装步骤、使用流程、FAQ、已知精度限制）。
+
+快速安装：
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/secret04725-coder/bazi-master-skill.git ~/.claude/skills/bazi-master
+pip3 install lunardate   # 农历转换依赖
+```
+
+之后在 Claude Code 对话中说"算八字"即可触发。
 
 ### 排盘示例
 
 ```bash
 python3 scripts/paipan.py 2002 8 2 10 f
 # 输出：壬午年 丁未月 壬寅日 乙巳时
+python3 scripts/paipan.py 1999 3 30 - m   # 时辰未知用 - 占位
 ```
 
 ## 与其他八字 Skill 的区别
