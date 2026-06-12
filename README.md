@@ -87,7 +87,7 @@ python3 scripts/paipan.py 2002 8 2 10 f
 
 ## 安装与使用
 
-**详细操作指南（安装步骤、使用流程、FAQ、已知精度限制）见 [USAGE.md](USAGE.md)。**
+**详细操作指南（安装步骤、使用流程、FAQ、已知精度限制）见 [USAGE.md](USAGE.md)，可打印的 PDF 版见 [usage-guide.pdf](usage-guide.pdf)（含每步耗时与验收标准）。**
 
 快速安装（Claude Code）：
 
